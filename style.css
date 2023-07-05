@@ -1,0 +1,218 @@
+@import url('https://fonts.googleapis.com/css2?family=Amatic+SC&family=Bacasime+Antique&family=Freehand&family=Russo+One&display=swap');
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.container{
+    background: linear-gradient(90deg, #b7b78a 50%, #3c6255 50%);
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.box{
+    background-color: #dddddd;
+    width: 90%;
+    height: 90vh;
+}
+
+.navbar .logo{
+    width: 60px;
+    height: 60px;
+    background-color: transparent;
+    border: 3px solid #3c6255;
+    border-radius: 50%;
+    border-right-color: transparent;
+    position: relative;
+}
+
+.navbar .logo::before{
+    content: "Shopify";
+    color: black;
+    font-size: 30px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-10%, -50%);
+    font-family: 'Freehand', cursive;
+}
+.navbar{
+    width: 90%;
+    margin: auto;
+    height: 15vh;
+}
+
+.navbar, .navlist{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    
+}
+
+.navlist li{
+    list-style: none;
+    padding: 20px;
+}
+
+.navlist a{
+    color: black;
+    font-size: 18px;
+    text-decoration: none;
+    position: relative;
+}
+
+.navlist a::before{
+    content:"";
+    position: absolute;
+    bottom: -3px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background-color: black;
+    transition: .5s ease-in-out;
+}
+
+.navlist a:hover::before{
+    width: 100%;
+
+}
+
+.box1{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 50px;
+}
+
+.box1 img{
+    width: 45vw;
+}
+
+.content{
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 20px;
+    border-left: 5px solid #3c6255; 
+    padding: 10px 50px;  
+}
+
+.content h3{
+    color: rgb(73, 73, 73);
+    font-size: 20px;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+}
+
+.content h1{
+    color: #3c6255;
+    font-size: 50px;
+
+}
+
+.content p{
+    color: black;
+    font-size: 18px;
+    line-height: 30px; 
+}
+
+.content button{
+    padding: 15px 30px;
+    font-size: 18px;
+    border-radius: 50px;
+    color: white;
+    border: none;
+    background: #3c6255;
+    cursor: pointer;
+}
+
+.content button:hover{
+    background-color: white;
+    color: #3c6255;
+}
+
+.hamburgur{
+    display: none;
+}
+.hamburgur span{
+    width: 15px;
+    height: 3px;
+    background-color: black;
+    display: block;
+    margin: 5px;
+}
+
+.hamburgur span:nth-child(2){
+    width:30px;
+}
+
+
+
+@media screen and(max-width: 1207px){
+    .content h1{
+        font-size: 45px;    
+    }
+    .content p{
+        font-size: 17px;
+        line-height: 25px;
+    }    
+}
+
+@media screen and(max-width: 1110px){
+    .content{
+        padding: 0px 40px;
+        gap: 10px;
+    }
+    .content h1{
+        font-size: 40px;
+
+    }
+    
+}
+
+
+@media screen and (max-width: 796px){
+    .box{
+        position: relative;
+        overflow: hidden;
+    }
+    .navlist{
+        position: absolute;
+        flex-direction: column;
+        right: -70%;
+        top: 0;
+        background-color: #b7b78a;
+        width: 250px;
+        height: 100%;
+        justify-content: center;
+        transition: .5s ease-in-out;
+
+    }
+
+    .navlist-active{
+        right:0;
+    }
+    .hamburgur{
+        display: block;
+        z-index: 5;
+    }
+
+    .box1 img{
+        display: none;
+    }
+
+    .content p{
+        font-size: 18px;
+        line-height: 30px;
+    }
+
+    .content{
+        padding: 20px 50px;
+        gap: 20px;
+    }
+}
